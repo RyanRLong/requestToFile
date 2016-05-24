@@ -50,7 +50,8 @@ A sample configuration file is included with the source.
 To best explain the configuration, lets take a look at an example JSON response from a server.
 ![json-example](https://github.com/SaltyCatFish/requestToFile/blob/master/docs/jsonSample.png?raw=true)
 
-Say in this example, we only wanted the *author* and *title* fields of the *book* node.  Our configuration file would look something like this: 
+Say in this example, we only wanted the *author* and *title* fields of the *book* node.  Our configuration file would look something like this:  
+ 
 ![json-example](https://github.com/SaltyCatFish/requestToFile/blob/master/docs/sampleConfig2.png?raw=true)
 
 * Since we are only concerned with values in the book node, we need to traverse the response by going to store -> book (nesting)
