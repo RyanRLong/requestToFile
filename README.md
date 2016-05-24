@@ -1,7 +1,8 @@
 # requestToFile
 
 ![Travis](https://travis-ci.org/SaltyCatFish/requestToFile.svg)
-[![GitHub release](https://img.shields.io/github/release/qubyte/rubidium.svg?maxAge=2592000)]()
+[![GitHub release](https://img.shields.io/github/release/qubyte/rubidium.svg?maxAge=2592000)](https://github.com/SaltyCatFish/requestToFile/releases/tag/v1.0.0)
+[![license](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)]()
 [![Twitter URL](https://img.shields.io/twitter/url/http/shields.io.svg?style=social&maxAge=2592000)](https://twitter.com/SaltyCatFish)
 
 requestToFile is a command line driven Python module that makes an http request with authorization to a url using a configuration file and formats the response into a csv file.  
