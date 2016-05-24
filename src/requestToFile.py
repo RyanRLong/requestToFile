@@ -49,7 +49,7 @@ class RequestToFile:
             nodesToTraverse = json.loads(config.get('NESTING', 'fields'))
         except ConfigParser.NoSectionError as e:
             self.logger.error('There is an error in the configuration file %s: %s' %
-                              filePath, e)
+                              (filePath, e))
             sys.exit(0)
 
         for item in keepFields:
@@ -79,7 +79,7 @@ class RequestToFile:
             response = requests.get(self.url,
                                     auth=(self.username, self.password), verify=False)
             if response.status_code == 500:
-                self.logger.error('%s replied with: %s. Exiting.' % self.url, response.text)
+                self.logger.error('%s replied with: %s. Exiting.' % (self.url, response.text))
                 sys.exit(1)
 
             data = None
