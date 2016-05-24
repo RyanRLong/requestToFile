@@ -44,18 +44,27 @@ There is a `--headers` flag that will make the request, but will only print out 
 
 ### Configuration File
 A sample configuration file is included with the source.  
+
 ![config-example](https://github.com/SaltyCatFish/requestToFile/blob/master/docs/sampleConfig.png?raw=true)
 
 #### Configuration File Explained
 To best explain the configuration, lets take a look at an example JSON response from a server.
+
 ![json-example](https://github.com/SaltyCatFish/requestToFile/blob/master/docs/jsonSample.png?raw=true)
 
 Say in this example, we only wanted the *author* and *title* fields of the *book* node.  Our configuration file would look something like this:  
- 
+
 ![json-example](https://github.com/SaltyCatFish/requestToFile/blob/master/docs/sampleConfig2.png?raw=true)
 
 * Since we are only concerned with values in the book node, we need to traverse the response by going to store -> book (nesting)
 * Since we only want to KEEP two values, we define keep fields as "author" and "title".
+
+## Logging
+requestToFile implements a rolling file log.  Once the original log file reaches 1 mb, a new file will be created and written to.  requestToFile will keep the most recent 3 log files.  These settings can be changed in logging.conf.
+
+## Notes
+* **!IMPORTANT!** - requestToFile was designed to ignore all certificate errors.  It is highly advised that you use this module to connect only to trusted sources
+* requestToFile will convert all commas to spaces before writing to the csv file
 
 
 
