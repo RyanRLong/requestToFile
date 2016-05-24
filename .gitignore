@@ -6,4 +6,5 @@ log.txt
 env_2
 log*
 *config*.ini
-
+!logging.conf
+!sample.ini
