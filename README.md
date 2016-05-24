@@ -10,7 +10,7 @@ The module functions by making an http request using the `requests` package.  On
 
 requestToFile will then keep or discard fields based on the configuration file (see below).  *It is important to keep in mind that `[KEEP_FIELDS]` and `[DISCARD_FIELDS]` are mutually exclusive, and having entries in both will throw an error*.
 
-Lastly, request to file will take the remaining information and write it to a csv file.
+Lastly, requestToFile will take the remaining information and write it to a csv file.
 
 requestToFile supports Python 2.6 or greater and Python 3.2 or greater.
 
@@ -43,25 +43,19 @@ python requestToFile.py
 There is a `--headers` flag that will make the request, but will only print out the available column headers based on the configuration file and the response returned.  This is useful for fine tuning configuration files and error checking.
 
 ### Configuration File
+A sample configuration file is included with the source.  
+![config-example](https://github.com/SaltyCatFish/requestToFile/blob/master/docs/sampleConfig.png?raw=true)
 
+#### Configuration File Explained
+To best explain the configuration, lets take a look at an example JSON response from a server.
+![json-example](https://github.com/SaltyCatFish/requestToFile/blob/master/docs/jsonSample.png?raw=true)
 
-#### [NESTING]
-fields = an array of nodes to traverse when gathering the data you need.  For example, say you have an XML response like so:
+Say in this example, we only wanted the *author* and *title* fields of the *book* node.  Our configuration file would look something like this: 
+![json-example](https://github.com/SaltyCatFish/requestToFile/blob/master/docs/sampleConfig2.png?raw=true)
 
-![xml-example](http://blog.sqlauthority.com/i/b/samplexml.jpg)
+* Since we are only concerned with values in the book node, we need to traverse the response by going to store -> book (nesting)
+* Since we only want to KEEP two values, we define keep fields as "author" and "title".
 
-If you only wanted the values of the `<Fruits>` subtree, you would setup the `[NESTING]` in your configuration file like so:
-
-```bash
-[NESTING]  
-fields = ["SampleXML", "Fruits"]
-```
-
-
-
-## Log
-
-**v0.0.2** - add full support for Python 3
 
 
 
