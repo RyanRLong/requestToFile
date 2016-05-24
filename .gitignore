@@ -1,0 +1,9 @@
+env/
+test.csv
+*.pyc
+log.txt
+*sublime*
+env_2
+log*
+*config*.ini
+
