@@ -200,13 +200,12 @@ class RequestToFile:
 
     def addDiscardFields(self, *columnHeaders):
         """Adds columns headers that are to be written to the CSV.  If this is set
-        all other columns will be discarded"""
+        these fields will be discarded and all others will be kept"""
         self.discardFields.extend(columnHeaders)
         return self
 
     def addNestingFields(self, *columnHeaders):
-        """TODO Adds columns headers that are to be written to the CSV.  If this is set
-        all other columns will be discarded"""
+        """Adds nesting fields to nodesToTraverse list"""
         self.nodesToTraverse.extend(columnHeaders)
         return self
 
