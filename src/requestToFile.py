@@ -77,7 +77,7 @@ class RequestToFile:
         """Fetches XML data"""
         try:
             response = requests.get(self.url,
-                                    auth=(self.username, self.password), verify=False)
+                                    auth=(self.username, self.password), headers={'accept': 'application/json'}, verify=False)
             if response.status_code == 500:
                 self.logger.error('%s replied with: %s. Exiting.' % (self.url, response.text))
                 sys.exit(1)
